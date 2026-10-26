@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" id="top">
+<head>
+<script>
+window.onerror=function(msg,src,line,col,err){window.parent.postMessage({type:'app-error',message:msg,source:src,lineno:line,colno:col,stack:err&&err.stack||''},'*');};
+window.onunhandledrejection=function(e){window.parent.postMessage({type:'app-error',message:'Unhandled promise rejection: '+(e.reason&&e.reason.message||e.reason||'unknown'),stack:e.reason&&e.reason.stack||''},'*');};
+window.addEventListener('error',function(e){var t=e&&e.target;if(t&&t!==window&&t.tagName==='SCRIPT'){var u=t.src||'';window.parent.postMessage({type:'app-error',message:'Failed to load script'+(u?': '+u:' (inline module)'),source:u},'*');}},true);
+(function(){var _f=window.fetch;window.fetch=function(){var a=arguments,u=typeof a[0]==='string'?a[0]:(a[0]&&a[0].url)||'';var p=_f.apply(this,a);p.then(function(r){if(r.status===500){r.clone().text().then(function(b){window.parent.postMessage({type:'fetch-error',url:u,status:500,body:b},'*');}).catch(function(){window.parent.postMessage({type:'fetch-error',url:u,status:500,body:''},'*');});}}).catch(function(e){window.parent.postMessage({type:'fetch-error',url:u,status:0,body:e.message||'fetch failed'},'*');});return p;};})();
+</script>
+<script src="https://builder.puter.com/runtime.js" defer></script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Services — Precious Metals Consulting LLC</title>
+<meta name="theme-color" content="#0B0D12" />
+<link rel="icon" href="icon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="js/tw.js"></script>
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+<main id="content">
+
+  <section class="page-hero pt-[76px]">
+    <div class="absolute -z-10 top-[-40%] right-[-10%] w-[700px] h-[700px] rounded-full blur-[90px]" style="background:radial-gradient(circle,rgba(0,123,167,.5),transparent 65%)"></div>
+    <div class="absolute -z-10 bottom-[-50%] left-[10%] w-[420px] h-[420px] rounded-full blur-[90px]" style="background:radial-gradient(circle,rgba(255,77,141,.16),transparent 65%)"></div>
+    <div class="grid-lines"></div>
+    <div class="container-x py-20 sm:py-28 grid lg:grid-cols-12 gap-10 items-end">
+      <div class="lg:col-span-7">
+        <nav class="text-sm text-silver flex items-center gap-2 reveal" aria-label="Breadcrumb"><a href="index.html" class="hover:text-white">Home</a><i data-lucide="chevron-right" class="w-3.5 h-3.5"></i><span class="text-white">Services</span></nav>
+        <h1 class="mt-6 font-display font-semibold text-5xl sm:text-7xl lg:text-8xl leading-[.98] reveal" style="--d:.06s">Our <span class="text-gradient">Services</span></h1>
+      </div>
+      <p class="lg:col-span-5 text-silver-300 text-lg reveal" style="--d:.12s">Explore profitable ventures in diamond mining, real estate, construction, and hospitality with our expert consulting.</p>
+    </div>
+    <!-- Jump index -->
+    <div class="border-t border-white/10">
+      <div class="container-x py-4 flex gap-2 overflow-x-auto no-scrollbar" id="jump" style="scrollbar-width:none"></div>
+    </div>
+  </section>
+
+  <section class="bg-soft py-20 sm:py-28">
+    <div class="container-x" id="svc-list"></div>
+  </section>
+
+  <!-- Overview grid -->
+  <section class="bg-white py-20 sm:py-28 border-t border-silver-200">
+    <div class="container-x">
+      <p class="eyebrow text-cerulean reveal"><span class="dot"></span>At a glance</p>
+      <h2 class="mt-5 font-display font-semibold text-4xl sm:text-5xl leading-[1.05] reveal">Every service, <span class="text-gradient-dark">one partner</span>.</h2>
+      <div id="glance" class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+    </div>
+  </section>
+
+  <div id="cta"></div>
+</main>
+<script type="module">
+  import { boot } from './js/main.js';
+  import { SERVICES } from './js/data.js';
+  import { ctaBand } from './js/layout.js';
+
+  boot('services', () => {
+    document.getElementById('jump').innerHTML = SERVICES.map(s => `<a href="#${s.id}" class="chip shrink-0 border border-white/10 text-silver-300 hover:text-white hover:border-cerulean-300 transition-colors"><i data-lucide="${s.icon}" class="w-3.5 h-3.5"></i>${s.title}</a>`).join('');
+
+    document.getElementById('svc-list').innerHTML = SERVICES.map((s, i) => {
+      const flip = i % 2 === 1;
+      const dark = i % 3 === 0;
+      return `
+      <article id="${s.id}" class="svc-row group py-14 sm:py-20 grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+        <div class="lg:col-span-6 ${flip ? 'lg:order-2' : ''}">
+          <div class="tile aspect-[4/3] img-reveal relative">
+            <img src="${s.img}" alt="${s.title}" loading="lazy" />
+            <span class="absolute top-4 left-4 chip ${dark ? 'bg-jet/80 text-white' : 'glass-light text-jet'} backdrop-blur"><i data-lucide="${s.icon}" class="w-3.5 h-3.5 ${dark ? 'text-rose' : 'text-cerulean'}"></i>${s.title}</span>
+          </div>
+        </div>
+        <div class="lg:col-span-6 ${flip ? 'lg:order-1' : ''}">
+          <div class="flex items-center gap-4 reveal">
+            <span class="num font-display text-5xl sm:text-6xl font-semibold text-silver-300">${String(i + 1).padStart(2, '0')}</span>
+            <span class="h-px flex-1 bg-gradient-to-r from-silver-300 to-transparent"></span>
+          </div>
+          <h2 class="mt-6 font-display font-semibold text-3xl sm:text-4xl leading-tight reveal">${s.title}${s.sub ? `<span class="block text-lg sm:text-xl font-normal text-silver-600 mt-2">${s.sub}</span>` : ''}</h2>
+          <p class="mt-4 text-lg text-cerulean-700 font-medium reveal">${s.short}</p>
+          <p class="mt-5 text-silver-700 leading-relaxed reveal">${s.long}</p>
+          <div class="mt-8 flex flex-wrap gap-3 reveal">
+            <a href="contact.html" class="btn btn-dark">Schedule a consultation<i data-lucide="arrow-right"></i></a>
+          </div>
+        </div>
+      </article>`;
+    }).join('');
+
+    document.getElementById('glance').innerHTML = SERVICES.map((s, i) => `
+      <a href="#${s.id}" class="svc-card reveal p-7 flex flex-col min-h-[220px]" style="--d:${(i % 3) * .05}s">
+        <div class="flex items-start justify-between">
+          <span class="svc-icon w-12 h-12 rounded-xl bg-cerulean-50 text-cerulean grid place-items-center"><i data-lucide="${s.icon}" class="w-5 h-5"></i></span>
+          <i data-lucide="arrow-up-right" class="arrow w-5 h-5 text-silver-500"></i>
+        </div>
+        <h3 class="mt-auto pt-8 font-display font-semibold text-xl">${s.title}</h3>
+        <p class="mt-2 text-sm text-silver-600">${s.short}</p>
+      </a>`).join('');
+
+    document.getElementById('cta').outerHTML = ctaBand('Ready to Invest?', 'Contact Precious Metals Consulting LLC');
+  });
+</script>
+</body>
+</html>

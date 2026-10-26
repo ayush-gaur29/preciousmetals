@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" id="top">
+<head>
+<script>
+window.onerror=function(msg,src,line,col,err){window.parent.postMessage({type:'app-error',message:msg,source:src,lineno:line,colno:col,stack:err&&err.stack||''},'*');};
+window.onunhandledrejection=function(e){window.parent.postMessage({type:'app-error',message:'Unhandled promise rejection: '+(e.reason&&e.reason.message||e.reason||'unknown'),stack:e.reason&&e.reason.stack||''},'*');};
+window.addEventListener('error',function(e){var t=e&&e.target;if(t&&t!==window&&t.tagName==='SCRIPT'){var u=t.src||'';window.parent.postMessage({type:'app-error',message:'Failed to load script'+(u?': '+u:' (inline module)'),source:u},'*');}},true);
+(function(){var _f=window.fetch;window.fetch=function(){var a=arguments,u=typeof a[0]==='string'?a[0]:(a[0]&&a[0].url)||'';var p=_f.apply(this,a);p.then(function(r){if(r.status===500){r.clone().text().then(function(b){window.parent.postMessage({type:'fetch-error',url:u,status:500,body:b},'*');}).catch(function(){window.parent.postMessage({type:'fetch-error',url:u,status:500,body:''},'*');});}}).catch(function(e){window.parent.postMessage({type:'fetch-error',url:u,status:0,body:e.message||'fetch failed'},'*');});return p;};})();
+</script>
+<script src="https://builder.puter.com/runtime.js" defer></script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>About Us — Precious Metals Consulting LLC</title>
+<meta name="theme-color" content="#0B0D12" />
+<link rel="icon" href="icon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="js/tw.js"></script>
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+<main id="content">
+
+  <section class="page-hero pt-[76px]">
+    <div class="orb orb-a absolute rounded-full blur-[80px] -z-10" style="width:600px;height:600px;background:radial-gradient(circle,rgba(0,123,167,.5),transparent 65%);top:-30%;left:-10%"></div>
+    <div class="absolute -z-10 bottom-[-40%] right-[5%] w-[420px] h-[420px] rounded-full blur-[90px]" style="background:radial-gradient(circle,rgba(255,77,141,.18),transparent 65%)"></div>
+    <div class="grid-lines"></div>
+    <div class="container-x py-20 sm:py-28">
+      <nav class="text-sm text-silver flex items-center gap-2 reveal" aria-label="Breadcrumb"><a href="index.html" class="hover:text-white">Home</a><i data-lucide="chevron-right" class="w-3.5 h-3.5"></i><span class="text-white">About Us</span></nav>
+      <h1 class="mt-6 font-display font-semibold text-5xl sm:text-7xl lg:text-8xl leading-[.98] reveal" style="--d:.06s">About <span class="text-gradient">Us</span></h1>
+      <p class="mt-6 max-w-2xl text-lg text-silver-300 reveal" style="--d:.12s">Precious Metals Consulting LLC — Empowering Global Investments in Africa.</p>
+    </div>
+  </section>
+
+  <!-- Empowering -->
+  <section class="bg-soft py-24 sm:py-32">
+    <div class="container-x grid lg:grid-cols-12 gap-14 items-center">
+      <div class="lg:col-span-6 order-2 lg:order-1">
+        <p class="eyebrow text-cerulean reveal"><span class="dot"></span>Precious Metals Consulting LLC</p>
+        <h2 class="mt-5 font-display font-semibold text-4xl sm:text-5xl leading-[1.05] reveal">Empowering Global <span class="text-gradient-dark">Investments</span> in Africa</h2>
+        <div class="metal-rule my-9 reveal"></div>
+        <div class="space-y-5 text-silver-700 leading-relaxed">
+          <p class="reveal text-lg text-jet">At Precious Metals Consulting LLC, we specialize in diamond mining, real estate, construction, oil extraction, and hospitality investments in Angola and beyond. With a strong network of industry professionals and government contacts, we guide entrepreneurs and investors through profitable opportunities while ensuring compliance with local and international regulations.</p>
+          <p class="reveal">With years of experience in precious metals, mining, and infrastructure development, we help businesses navigate the complexities of resource extraction, prospecting, and property investments. Our team ensures that every project is executed with strategic planning, ethical sourcing, and sustainable practices.</p>
+          <p class="reveal">We assist both startups and established enterprises in selecting reputable partners and navigating due diligence procedures. Whether you are entering the diamond, gold, oil, or construction industry, our insights and connections help you streamline operations and maximize profitability.</p>
+        </div>
+      </div>
+      <div class="lg:col-span-6 order-1 lg:order-2 grid grid-cols-5 gap-4">
+        <div class="col-span-3 tile aspect-[3/4] img-reveal"><img src="https://preciousmetalsconsultingllc.com/wp-content/uploads/2025/02/image-28.png" alt="Precious Metals Consulting operations" /></div>
+        <div class="col-span-2 flex flex-col gap-4 pt-12">
+          <div class="tile aspect-[3/4] img-reveal"><img src="https://preciousmetalsconsultingllc.com/wp-content/uploads/2025/02/image-29.png" alt="Precious Metals Consulting project" /></div>
+          <div class="rounded-[22px] bg-jet text-white p-5 reveal">
+            <i data-lucide="shield-check" class="w-5 h-5 text-rose"></i>
+            <p class="mt-4 text-sm text-silver-300 leading-snug">Compliance with local and international regulations.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision — dark -->
+  <section class="relative bg-jet text-soft py-24 sm:py-32 overflow-hidden isolate">
+    <div class="absolute -z-10 left-1/2 top-0 -translate-x-1/2 w-[900px] h-[500px] rounded-full bg-cerulean/25 blur-[140px]"></div>
+    <div class="container-x">
+      <div class="max-w-4xl">
+        <p class="eyebrow text-cerulean-300 reveal"><span class="dot"></span>Our Mission</p>
+        <h2 class="mt-5 font-display font-semibold text-4xl sm:text-6xl leading-[1.03] reveal">A Vision for <span class="text-gradient">Economic Growth</span></h2>
+        <p class="mt-10 font-display text-2xl sm:text-3xl leading-snug text-soft reveal">Our mission is to bridge the gap between investors and Africa’s emerging markets.</p>
+      </div>
+      <div class="mt-14 grid md:grid-cols-3 gap-4">
+        <div class="svc-dark p-7 reveal"><i data-lucide="briefcase" class="w-6 h-6 text-cerulean-300"></i><h3 class="mt-8 font-display font-semibold text-xl">Job creation</h3></div>
+        <div class="svc-dark p-7 reveal" style="--d:.06s"><i data-lucide="landmark" class="w-6 h-6 text-cerulean-300"></i><h3 class="mt-8 font-display font-semibold text-xl">Infrastructure expansion</h3></div>
+        <div class="svc-dark p-7 reveal" style="--d:.12s"><i data-lucide="users" class="w-6 h-6 text-rose"></i><h3 class="mt-8 font-display font-semibold text-xl">Community upliftment</h3></div>
+      </div>
+      <div class="mt-14 grid md:grid-cols-2 gap-10 text-silver-300 leading-relaxed">
+        <p class="reveal">We believe in fostering economic development by supporting businesses that contribute to job creation, infrastructure expansion, and community upliftment.</p>
+        <p class="reveal" style="--d:.06s">At Precious Metals Consulting LLC, we take pride in delivering reliable, high-quality consulting services tailored to the needs of government and private sector clients. Our approach combines market intelligence, risk assessment, and hands-on expertise to drive successful business ventures in Angola’s thriving industries.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Innovation -->
+  <section class="bg-white py-24 sm:py-32">
+    <div class="container-x">
+      <div class="tile aspect-[16/9] sm:aspect-[21/9] img-reveal relative">
+        <img src="assets/landscape.png" alt="Aerial view of a mining landscape in southern Africa" />
+        <div class="absolute inset-0 bg-gradient-to-r from-jet/70 to-transparent"></div>
+        <div class="absolute left-6 sm:left-12 bottom-6 sm:bottom-12 max-w-md text-white">
+          <p class="eyebrow text-cerulean-300"><span class="dot"></span>Resource Management</p>
+          <p class="hidden sm:block mt-3 font-display text-2xl lg:text-3xl leading-tight">Precision, sustainability, and profitability.</p>
+        </div>
+      </div>
+      <div class="mt-16 grid lg:grid-cols-12 gap-10">
+        <h2 class="lg:col-span-5 font-display font-semibold text-4xl sm:text-5xl leading-[1.05] reveal">Driving Innovation in <span class="text-gradient-dark">Resource Management</span></h2>
+        <div class="lg:col-span-7 grid sm:grid-cols-2 gap-6">
+          <div class="rounded-[22px] border border-silver-200 bg-soft p-7 reveal">
+            <span class="w-11 h-11 rounded-xl bg-cerulean text-white grid place-items-center"><i data-lucide="cpu" class="w-5 h-5"></i></span>
+            <p class="mt-6 text-silver-700 leading-relaxed">At Precious Metals Consulting LLC, we leverage cutting-edge technologies and best practices to optimize resource extraction, project management, and market expansion. From diamond and gold mining to oil extraction and real estate development, we ensure that every venture is handled with precision, sustainability, and profitability.</p>
+          </div>
+          <div class="rounded-[22px] border border-silver-200 bg-soft p-7 reveal" style="--d:.08s">
+            <span class="w-11 h-11 rounded-xl bg-jet text-rose grid place-items-center"><i data-lucide="globe-2" class="w-5 h-5"></i></span>
+            <p class="mt-6 text-silver-700 leading-relaxed">We understand the complexities of operating in international markets, which is why we provide comprehensive business consulting, staff training, and investment strategies tailored to our clients’ goals. Whether you’re looking to expand into hospitality, tourism, or commercial real estate, our expertise and extensive industry network ensure a seamless and rewarding investment journey.</p>
+          </div>
+        </div>
+      </div>
+      <div class="mt-12 grid grid-cols-2 gap-4">
+        <div class="tile aspect-[4/3] img-reveal"><img src="https://preciousmetalsconsultingllc.com/wp-content/uploads/2025/02/image-10-1.png" alt="Resource management project" loading="lazy" /></div>
+        <div class="tile aspect-[4/3] img-reveal"><img src="https://preciousmetalsconsultingllc.com/wp-content/uploads/2025/02/image-9-1.png" alt="Resource management project" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <div id="cta"></div>
+</main>
+<script type="module">
+  import { boot } from './js/main.js';
+  import { ctaBand } from './js/layout.js';
+  boot('about', () => { document.getElementById('cta').outerHTML = ctaBand('Ready to Invest?', 'Contact Precious Metals Consulting LLC'); });
+</script>
+</body>
+</html>
