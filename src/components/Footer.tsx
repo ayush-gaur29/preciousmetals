@@ -63,18 +63,14 @@ export const Footer: React.FC = () => {
           <div className="lg:col-span-4">
             <Link
               to="/"
-              className="flex items-center gap-3 shrink-0"
+              className="inline-flex items-center shrink-0"
               aria-label="Precious Metals Consulting LLC — Home"
             >
-              <img src="/icon.svg" alt="" className="w-9 h-9 rounded-[10px]" />
-              <span className="leading-none">
-                <span className="block font-display font-semibold text-[15px] tracking-tight text-white">
-                  Precious Metals
-                </span>
-                <span className="block text-[10px] tracking-[.22em] uppercase mt-1 text-silver">
-                  Consulting LLC
-                </span>
-              </span>
+              <img
+                src="/assets/Precious_Metals_Logo.png"
+                alt="Precious Metals Consulting LLC"
+                className="h-16 w-auto object-contain"
+              />
             </Link>
             <p className="mt-6 text-silver text-sm leading-relaxed max-w-sm">
               Transforming Resources into Opportunities — connecting investors
@@ -195,28 +191,63 @@ export const Footer: React.FC = () => {
               <h4 className="text-xs tracking-[.18em] uppercase text-silver-500 font-sans font-semibold">
                 Contact Us
               </h4>
-              <ul className="mt-5 space-y-3 text-sm">
+              <ul className="mt-5 space-y-3.5 text-sm">
                 <li>
                   <a
-                    href={COMPANY.phoneHref}
-                    className="flex items-center gap-3 text-silver-300 hover:text-white"
+                    href={COMPANY.executivePhoneHref}
+                    className="flex items-start gap-3 text-silver-300 hover:text-white transition-colors group"
                   >
-                    <Phone className="w-4 h-4 text-cerulean-300" />
-                    {COMPANY.phone}
+                    <Phone className="w-4 h-4 shrink-0 mt-0.5 text-cerulean-300 group-hover:text-rose transition-colors" />
+                    <div>
+                      <span className="block text-[11px] uppercase tracking-wider text-silver-500 font-medium">
+                        USA Executive Desk
+                      </span>
+                      <span className="text-white font-medium">
+                        {COMPANY.executivePhone}
+                      </span>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={`mailto:${COMPANY.executiveEmail}`}
+                    className="flex items-start gap-3 text-silver-300 hover:text-white transition-colors group"
+                  >
+                    <Mail className="w-4 h-4 shrink-0 mt-0.5 text-rose group-hover:text-cerulean-300 transition-colors" />
+                    <div className="min-w-0">
+                      <span className="block text-[11px] uppercase tracking-wider text-silver-500 font-medium">
+                        Executive Email
+                      </span>
+                      <span className="text-white font-medium break-all">
+                        {COMPANY.executiveEmail}
+                      </span>
+                    </div>
                   </a>
                 </li>
                 <li>
                   <a
                     href={`mailto:${COMPANY.email}`}
-                    className="flex items-center gap-3 text-silver-300 hover:text-white break-all"
+                    className="flex items-start gap-3 text-silver-300 hover:text-white transition-colors group"
                   >
-                    <Mail className="w-4 h-4 shrink-0 text-cerulean-300" />
-                    {COMPANY.email}
+                    <Mail className="w-4 h-4 shrink-0 mt-0.5 text-cerulean-300 group-hover:text-rose transition-colors" />
+                    <div className="min-w-0">
+                      <span className="block text-[11px] uppercase tracking-wider text-silver-500 font-medium">
+                        General Business Email
+                      </span>
+                      <span className="text-silver-300 break-all">
+                        {COMPANY.email}
+                      </span>
+                    </div>
                   </a>
                 </li>
                 <li className="flex items-start gap-3 text-silver-300">
                   <MapPin className="w-4 h-4 shrink-0 mt-0.5 text-cerulean-300" />
-                  {COMPANY.address}
+                  <div>
+                    <span className="block text-[11px] uppercase tracking-wider text-silver-500 font-medium">
+                      Headquarters
+                    </span>
+                    <span>{COMPANY.address}</span>
+                  </div>
                 </li>
               </ul>
             </div>

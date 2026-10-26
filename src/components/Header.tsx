@@ -72,18 +72,14 @@ export const Header: React.FC = () => {
           {/* Logo */}
           <Link
             to="/"
-            className="flex items-center gap-3 shrink-0"
+            className="flex items-center shrink-0"
             aria-label="Precious Metals Consulting LLC — Home"
           >
-            <img src="/icon.svg" alt="" className="w-9 h-9 rounded-[10px]" />
-            <span className="leading-none">
-              <span className="block font-display font-semibold text-[15px] tracking-tight text-white">
-                Precious Metals
-              </span>
-              <span className="block text-[10px] tracking-[.22em] uppercase mt-1 text-silver">
-                Consulting LLC
-              </span>
-            </span>
+            <img
+              src="/assets/Precious_Metals_Logo.png"
+              alt="Precious Metals Consulting LLC"
+              className="h-11 md:h-12 w-auto object-contain"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -163,9 +159,11 @@ export const Header: React.FC = () => {
           <div className="flex items-center gap-3">
             <a
               href={COMPANY.phoneHref}
+              title="USA Executive Desk"
+              aria-label={`USA Executive Desk: ${COMPANY.phone}`}
               className="hidden xl:inline-flex items-center gap-2 text-sm text-silver hover:text-white transition-colors"
             >
-              <Phone className="w-4 h-4" />
+              <Phone className="w-4 h-4 text-cerulean-300" />
               {COMPANY.phone}
             </a>
             <Link

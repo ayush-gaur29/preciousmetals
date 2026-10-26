@@ -29,9 +29,9 @@ A pixel-faithful, responsive React + TypeScript web application built with Vite 
 ```text
 preciousmetals/
 ├── public/
-│   ├── assets/               # Static image assets (hero, diamond, landscape)
-│   ├── icon.svg              # Gemstone brand SVG favicon & logo
-│   └── favicon.svg
+│   ├── assets/               # Static image assets (Precious_Metals_Logo.png, hero, diamond, landscape)
+│   ├── favicon.ico           # Brand logo favicon
+│   └── favicon.png
 ├── src/
 │   ├── assets/               # Bundled assets & illustrations
 │   ├── components/           # Reusable UI components

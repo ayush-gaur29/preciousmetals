@@ -454,12 +454,12 @@ export const HomePage: React.FC = () => {
               >
                 <span className="flex items-center justify-between">
                   <span className="text-xs uppercase tracking-[.16em] text-silver font-semibold">
-                    Call Us Anytime
+                    USA Executive Desk
                   </span>
                   <PhoneCall className="w-5 h-5 text-cerulean-300 group-hover:text-rose transition-colors" />
                 </span>
                 <span className="mt-6 font-display font-semibold text-2xl text-white">
-                  (651) 392-4757
+                  +1 651-392-4757
                 </span>
               </a>
             </div>

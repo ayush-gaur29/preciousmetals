@@ -63,18 +63,14 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
           <Link
             to="/"
             onClick={onClose}
-            className="flex items-center gap-3 shrink-0"
+            className="flex items-center shrink-0"
             aria-label="Precious Metals Consulting LLC — Home"
           >
-            <img src="/icon.svg" alt="" className="w-9 h-9 rounded-[10px]" />
-            <span className="leading-none">
-              <span className="block font-display font-semibold text-[15px] tracking-tight text-white">
-                Precious Metals
-              </span>
-              <span className="block text-[10px] tracking-[.22em] uppercase mt-1 text-silver">
-                Consulting LLC
-              </span>
-            </span>
+            <img
+              src="/assets/Precious_Metals_Logo.png"
+              alt="Precious Metals Consulting LLC"
+              className="h-11 w-auto object-contain"
+            />
           </Link>
           <button
             className="w-11 h-11 rounded-full border border-white/15 grid place-items-center hover:bg-white/10 transition-colors"
@@ -172,18 +168,40 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
           style={{ transitionDelay: '0.45s' }}
         >
           <a
-            href={COMPANY.phoneHref}
-            className="flex items-center gap-3 text-sm text-silver-300 hover:text-white"
+            href={COMPANY.executivePhoneHref}
+            className="flex items-start gap-3 text-sm text-silver-300 hover:text-white"
           >
-            <Phone className="w-4 h-4 text-cerulean-300" />
-            {COMPANY.phone}
+            <Phone className="w-4 h-4 text-cerulean-300 shrink-0 mt-0.5" />
+            <div>
+              <span className="block text-[10px] uppercase tracking-wider text-silver-500 font-medium">
+                USA Executive Desk
+              </span>
+              <span className="text-white font-medium">{COMPANY.executivePhone}</span>
+            </div>
+          </a>
+          <a
+            href={`mailto:${COMPANY.executiveEmail}`}
+            className="flex items-start gap-3 text-sm text-silver-300 hover:text-white break-all"
+          >
+            <Mail className="w-4 h-4 text-rose shrink-0 mt-0.5" />
+            <div>
+              <span className="block text-[10px] uppercase tracking-wider text-silver-500 font-medium">
+                Executive Email
+              </span>
+              <span className="text-white font-medium">{COMPANY.executiveEmail}</span>
+            </div>
           </a>
           <a
             href={`mailto:${COMPANY.email}`}
-            className="flex items-center gap-3 text-sm text-silver-300 hover:text-white break-all"
+            className="flex items-start gap-3 text-sm text-silver-300 hover:text-white break-all"
           >
-            <Mail className="w-4 h-4 text-cerulean-300 shrink-0" />
-            {COMPANY.email}
+            <Mail className="w-4 h-4 text-cerulean-300 shrink-0 mt-0.5" />
+            <div>
+              <span className="block text-[10px] uppercase tracking-wider text-silver-500 font-medium">
+                General Business Email
+              </span>
+              <span>{COMPANY.email}</span>
+            </div>
           </a>
           <Link
             to="/contact"

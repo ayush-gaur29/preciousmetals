@@ -3,6 +3,9 @@ export interface CompanyInfo {
   phone: string;
   phoneHref: string;
   email: string;
+  executiveEmail: string;
+  executivePhone: string;
+  executivePhoneHref: string;
   address: string;
   headquarters: string;
   operationsHub: string;

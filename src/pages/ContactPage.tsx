@@ -134,7 +134,7 @@ export const ContactPage: React.FC = () => {
               {/* Contact Cards */}
               <div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-4">
                 <a
-                  href={COMPANY.phoneHref}
+                  href={COMPANY.executivePhoneHref}
                   className="reveal group p-6 rounded-2xl bg-white border border-silver-200 hover:border-cerulean-300 hover:shadow-lg transition-all flex items-start gap-4"
                 >
                   <span className="w-12 h-12 rounded-xl bg-cerulean/10 text-cerulean grid place-items-center shrink-0 group-hover:bg-cerulean group-hover:text-white transition-colors">
@@ -142,13 +142,33 @@ export const ContactPage: React.FC = () => {
                   </span>
                   <div>
                     <p className="text-xs uppercase tracking-wider font-semibold text-silver-500">
-                      Call Us Directly
+                      USA Executive Desk
                     </p>
                     <p className="mt-1 font-display font-semibold text-lg text-jet">
-                      {COMPANY.phone}
+                      {COMPANY.executivePhone}
                     </p>
                     <p className="mt-0.5 text-xs text-silver-600">
                       Monday – Friday: 9am – 6pm CST
+                    </p>
+                  </div>
+                </a>
+
+                <a
+                  href={`mailto:${COMPANY.executiveEmail}`}
+                  className="reveal group p-6 rounded-2xl bg-white border border-silver-200 hover:border-cerulean-300 hover:shadow-lg transition-all flex items-start gap-4"
+                >
+                  <span className="w-12 h-12 rounded-xl bg-rose/10 text-rose grid place-items-center shrink-0 group-hover:bg-rose group-hover:text-white transition-colors">
+                    <Mail className="w-5 h-5" />
+                  </span>
+                  <div className="min-w-0">
+                    <p className="text-xs uppercase tracking-wider font-semibold text-silver-500">
+                      Executive Email
+                    </p>
+                    <p className="mt-1 font-display font-semibold text-sm sm:text-base text-jet break-all">
+                      {COMPANY.executiveEmail}
+                    </p>
+                    <p className="mt-0.5 text-xs text-silver-600">
+                      Direct executive advisory &amp; consultations
                     </p>
                   </div>
                 </a>
@@ -162,7 +182,7 @@ export const ContactPage: React.FC = () => {
                   </span>
                   <div className="min-w-0">
                     <p className="text-xs uppercase tracking-wider font-semibold text-silver-500">
-                      Email Inquiries
+                      General Business Email
                     </p>
                     <p className="mt-1 font-display font-semibold text-sm sm:text-base text-jet break-all">
                       {COMPANY.email}
