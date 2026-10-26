@@ -8,6 +8,9 @@ export interface CompanyInfo {
   executivePhoneHref: string;
   address: string;
   headquarters: string;
+  headquartersLocation: string;
+  internationalLiaison: string;
+  internationalConnections: string;
   operationsHub: string;
   facebook: string;
   instagram: string;

@@ -43,10 +43,10 @@ export const GalleryPage: React.FC = () => {
           }}
         />
         <div className="grid-lines" />
-        <div className="container-x py-20 sm:py-28 grid lg:grid-cols-12 gap-10 items-end">
+        <div className="container-x py-14 sm:py-20 lg:py-24 grid lg:grid-cols-12 gap-8 lg:gap-10 items-end">
           <div className="lg:col-span-8">
             <nav
-              className="text-sm text-silver flex items-center gap-2 reveal"
+              className="text-xs sm:text-sm text-silver flex items-center gap-2 reveal"
               aria-label="Breadcrumb"
             >
               <Link to="/" className="hover:text-white transition-colors">
@@ -56,14 +56,14 @@ export const GalleryPage: React.FC = () => {
               <span className="text-white">Gallery</span>
             </nav>
             <h1
-              className="mt-6 font-display font-semibold text-5xl sm:text-7xl lg:text-8xl leading-[.98] reveal"
+              className="mt-4 sm:mt-6 font-display font-semibold text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.02] reveal"
               style={{ '--d': '.06s' } as React.CSSProperties}
             >
               Our <span className="text-gradient">Gallery</span>
             </h1>
           </div>
           <p
-            className="lg:col-span-4 text-silver-300 text-lg reveal"
+            className="lg:col-span-4 text-silver-300 text-base sm:text-lg reveal"
             style={{ '--d': '.12s' } as React.CSSProperties}
           >
             Witness our ground operations, mining ventures, refined mineral

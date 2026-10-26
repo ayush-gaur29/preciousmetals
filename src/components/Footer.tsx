@@ -244,14 +244,33 @@ export const Footer: React.FC = () => {
                   <MapPin className="w-4 h-4 shrink-0 mt-0.5 text-cerulean-300" />
                   <div>
                     <span className="block text-[11px] uppercase tracking-wider text-silver-500 font-medium">
-                      Headquarters
+                      USA Headquarters
                     </span>
-                    <span>{COMPANY.address}</span>
+                    <span className="block text-white font-medium">Minneapolis–St. Paul, MN</span>
+                    <span className="block text-xs text-silver-400 mt-0.5">{COMPANY.address}</span>
                   </div>
                 </li>
               </ul>
             </div>
           </div>
+        </div>
+
+        {/* Institutional Confidentiality Notice & Letterhead */}
+        <div className="mt-12 p-4 rounded-2xl bg-white/5 border border-white/10 text-xs text-silver-300 flex items-center justify-between flex-wrap gap-4">
+          <p className="flex items-start sm:items-center gap-2.5 max-w-3xl">
+            <span className="w-2 h-2 rounded-full bg-rose inline-block shrink-0 mt-1 sm:mt-0" />
+            <span>
+              <strong className="text-white">Institutional Requirement:</strong> Mutual Non-Disclosure Agreement (NDA) required prior to the release of confidential mineral project dossiers.
+            </span>
+          </p>
+          <a
+            href="/letterhead.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-cerulean-300 hover:text-white transition-colors underline underline-offset-4 text-xs shrink-0"
+          >
+            Corporate Letterhead (Print / PDF) ↗
+          </a>
         </div>
 
         <div className="metal-rule mt-16" />

@@ -8,6 +8,8 @@ import {
   Users,
   Cpu,
   Globe2,
+  MapPin,
+  Compass,
 } from 'lucide-react';
 import { CtaBand } from '../components/CtaBand';
 import { useReveal } from '../hooks/useReveal';
@@ -36,9 +38,9 @@ export const AboutPage: React.FC = () => {
           }}
         />
         <div className="grid-lines" />
-        <div className="container-x py-20 sm:py-28">
+        <div className="container-x py-14 sm:py-20 lg:py-24">
           <nav
-            className="text-sm text-silver flex items-center gap-2 reveal"
+            className="text-xs sm:text-sm text-silver flex items-center gap-2 reveal"
             aria-label="Breadcrumb"
           >
             <Link to="/" className="hover:text-white transition-colors">
@@ -48,13 +50,13 @@ export const AboutPage: React.FC = () => {
             <span className="text-white">About Us</span>
           </nav>
           <h1
-            className="mt-6 font-display font-semibold text-5xl sm:text-7xl lg:text-8xl leading-[.98] reveal"
+            className="mt-4 sm:mt-6 font-display font-semibold text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.02] reveal"
             style={{ '--d': '.06s' } as React.CSSProperties}
           >
             About <span className="text-gradient">Us</span>
           </h1>
           <p
-            className="mt-6 max-w-2xl text-lg text-silver-300 reveal"
+            className="mt-4 sm:mt-6 max-w-2xl text-base sm:text-lg text-silver-300 reveal"
             style={{ '--d': '.12s' } as React.CSSProperties}
           >
             Precious Metals Consulting LLC — Empowering Global Investments in
@@ -270,11 +272,173 @@ export const AboutPage: React.FC = () => {
         </div>
       </section>
 
-      {/* CTA BAND */}
+      {/* STRATEGIC PARTNERSHIPS & INSTITUTIONAL ALLIANCES */}
+      <section className="bg-white py-24 sm:py-32 border-t border-silver-200">
+        <div className="container-x">
+          <div className="max-w-3xl">
+            <p className="eyebrow text-cerulean reveal">
+              <span className="dot" />
+              Institutional Credibility &amp; Trust
+            </p>
+            <h2 className="mt-5 font-display font-semibold text-4xl sm:text-5xl lg:text-6xl leading-[1.04] text-jet reveal">
+              Strategic Partnerships &amp;{' '}
+              <span className="text-gradient-dark">Institutional Alliances</span>
+            </h2>
+            <div className="metal-rule my-8 reveal" />
+            <blockquote className="text-xl sm:text-2xl font-display font-medium text-jet leading-snug reveal border-l-4 border-cerulean pl-6 py-3 italic bg-soft rounded-r-2xl">
+              “Decades-long alliances with ministerial bodies, state-owned mining entities, and strategic institutional partners.”
+            </blockquote>
+          </div>
+
+          <div className="mt-14 grid md:grid-cols-3 gap-6">
+            <div className="rounded-[24px] border border-silver-200 bg-soft p-8 reveal flex flex-col justify-between">
+              <div>
+                <span className="w-12 h-12 rounded-xl bg-cerulean text-white grid place-items-center">
+                  <Landmark className="w-6 h-6" />
+                </span>
+                <h3 className="mt-6 font-display font-semibold text-2xl text-jet">
+                  Ministerial Bodies
+                </h3>
+                <p className="mt-4 text-silver-700 leading-relaxed text-sm">
+                  Decades of established relationships navigating sovereign resource
+                  frameworks, mining concession compliance, and official regulatory
+                  clearances in Angola.
+                </p>
+              </div>
+              <div className="mt-8 pt-6 border-t border-silver-200/80 text-xs font-semibold text-cerulean uppercase tracking-wider">
+                Sovereign Frameworks
+              </div>
+            </div>
+
+            <div
+              className="rounded-[24px] border border-silver-200 bg-soft p-8 reveal flex flex-col justify-between"
+              style={{ '--d': '.06s' } as React.CSSProperties}
+            >
+              <div>
+                <span className="w-12 h-12 rounded-xl bg-jet text-rose grid place-items-center">
+                  <ShieldCheck className="w-6 h-6" />
+                </span>
+                <h3 className="mt-6 font-display font-semibold text-2xl text-jet">
+                  State-Owned Entities
+                </h3>
+                <p className="mt-4 text-silver-700 leading-relaxed text-sm">
+                  Direct liaison with national mineral institutions and state
+                  operators to unlock vetted diamond concessions, gold extraction,
+                  and sustainable infrastructure development.
+                </p>
+              </div>
+              <div className="mt-8 pt-6 border-t border-silver-200/80 text-xs font-semibold text-rose uppercase tracking-wider">
+                Concession Access
+              </div>
+            </div>
+
+            <div
+              className="rounded-[24px] border border-silver-200 bg-soft p-8 reveal flex flex-col justify-between"
+              style={{ '--d': '.12s' } as React.CSSProperties}
+            >
+              <div>
+                <span className="w-12 h-12 rounded-xl bg-cerulean text-white grid place-items-center">
+                  <Globe2 className="w-6 h-6" />
+                </span>
+                <h3 className="mt-6 font-display font-semibold text-2xl text-jet">
+                  Institutional Partners
+                </h3>
+                <p className="mt-4 text-silver-700 leading-relaxed text-sm">
+                  Connecting institutional and private capital from the USA and
+                  Europe into high-yield resource ventures with ethical standards
+                  and rigorous due diligence.
+                </p>
+              </div>
+              <div className="mt-8 pt-6 border-t border-silver-200/80 text-xs font-semibold text-cerulean uppercase tracking-wider">
+                Global Capital
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* INTERNATIONAL PRESENCE */}
+      <section className="bg-jet text-white py-24 sm:py-32 relative overflow-hidden isolate">
+        <div className="absolute -z-10 right-0 top-1/2 -translate-y-1/2 w-[700px] h-[500px] rounded-full bg-cerulean/20 blur-[130px]" />
+        <div className="container-x">
+          <div className="max-w-3xl">
+            <p className="eyebrow text-cerulean-300 reveal">
+              <span className="dot" />
+              Global Footprint
+            </p>
+            <h2 className="mt-5 font-display font-semibold text-4xl sm:text-6xl leading-[1.03] reveal">
+              Our <span className="text-gradient">International Presence</span>
+            </h2>
+            <p className="mt-6 text-silver-300 text-lg leading-relaxed reveal">
+              Clearly distinguishing sovereign liaison on the African continent,
+              transatlantic headquarters in the United States, and strategic
+              business connections across European commercial capitals.
+            </p>
+          </div>
+
+          <div className="mt-14 grid md:grid-cols-3 gap-6">
+            <div className="rounded-[24px] bg-white/5 border border-white/10 p-8 reveal backdrop-blur">
+              <span className="w-12 h-12 rounded-xl bg-cerulean/20 text-cerulean-300 grid place-items-center">
+                <MapPin className="w-6 h-6" />
+              </span>
+              <p className="mt-6 text-xs uppercase tracking-wider font-semibold text-cerulean-300">
+                USA Headquarters
+              </p>
+              <h3 className="mt-2 font-display font-semibold text-2xl text-white">
+                Minneapolis–St. Paul
+              </h3>
+              <p className="mt-1 text-sm text-silver">Minnesota, United States</p>
+              <p className="mt-4 text-xs text-silver-400 border-t border-white/10 pt-4">
+                Corporate headquarters, governance &amp; USA Executive Desk.
+              </p>
+            </div>
+
+            <div
+              className="rounded-[24px] bg-white/5 border border-rose/30 p-8 reveal backdrop-blur"
+              style={{ '--d': '.06s' } as React.CSSProperties}
+            >
+              <span className="w-12 h-12 rounded-xl bg-rose/20 text-rose grid place-items-center">
+                <Compass className="w-6 h-6" />
+              </span>
+              <p className="mt-6 text-xs uppercase tracking-wider font-semibold text-rose-300">
+                International Liaison
+              </p>
+              <h3 className="mt-2 font-display font-semibold text-2xl text-white">
+                Luanda, Angola
+              </h3>
+              <p className="mt-1 text-sm text-silver">Southern Africa</p>
+              <p className="mt-4 text-xs text-silver-400 border-t border-white/10 pt-4">
+                Direct on-site operational liaison with mining concessions &amp; ministerial entities.
+              </p>
+            </div>
+
+            <div
+              className="rounded-[24px] bg-white/5 border border-white/10 p-8 reveal backdrop-blur"
+              style={{ '--d': '.12s' } as React.CSSProperties}
+            >
+              <span className="w-12 h-12 rounded-xl bg-cerulean/20 text-cerulean-300 grid place-items-center">
+                <Globe2 className="w-6 h-6" />
+              </span>
+              <p className="mt-6 text-xs uppercase tracking-wider font-semibold text-cerulean-300">
+                International Business Connections
+              </p>
+              <h3 className="mt-2 font-display font-semibold text-2xl text-white">
+                Lisbon &amp; London
+              </h3>
+              <p className="mt-1 text-sm text-silver">Portugal &amp; United Kingdom</p>
+              <p className="mt-4 text-xs text-silver-400 border-t border-white/10 pt-4">
+                Strategic European capital syndication &amp; institutional partner networks.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* EXECUTIVE ENGAGEMENT */}
       <CtaBand
-        title="Ready to Invest?"
-        highlight="Contact Precious Metals Consulting LLC"
-        buttonText="Contact Us"
+        title="Executive Engagement"
+        highlight="Let's Discuss Your Next Strategic Concession or Capital Development."
+        buttonText="Schedule a Consultation"
         buttonHref="/contact"
       />
     </>

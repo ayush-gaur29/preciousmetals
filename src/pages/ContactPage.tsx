@@ -8,6 +8,9 @@ import {
   MapPin,
   Compass,
   Send,
+  ShieldCheck,
+  Lock,
+  Globe2,
 } from 'lucide-react';
 import { COMPANY, FAQS } from '../data';
 import { CtaBand } from '../components/CtaBand';
@@ -78,10 +81,10 @@ export const ContactPage: React.FC = () => {
           }}
         />
         <div className="grid-lines" />
-        <div className="container-x py-20 sm:py-28 grid lg:grid-cols-12 gap-10 items-end">
+        <div className="container-x py-14 sm:py-20 lg:py-24 grid lg:grid-cols-12 gap-8 lg:gap-10 items-end">
           <div className="lg:col-span-8">
             <nav
-              className="text-sm text-silver flex items-center gap-2 reveal"
+              className="text-xs sm:text-sm text-silver flex items-center gap-2 reveal"
               aria-label="Breadcrumb"
             >
               <Link to="/" className="hover:text-white transition-colors">
@@ -91,14 +94,14 @@ export const ContactPage: React.FC = () => {
               <span className="text-white">Contact Us</span>
             </nav>
             <h1
-              className="mt-6 font-display font-semibold text-5xl sm:text-7xl lg:text-8xl leading-[.98] reveal"
+              className="mt-4 sm:mt-6 font-display font-semibold text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.02] reveal"
               style={{ '--d': '.06s' } as React.CSSProperties}
             >
               Contact <span className="text-gradient">Our Team</span>
             </h1>
           </div>
           <p
-            className="lg:col-span-4 text-silver-300 text-lg reveal"
+            className="lg:col-span-4 text-silver-300 text-base sm:text-lg reveal"
             style={{ '--d': '.12s' } as React.CSSProperties}
           >
             Ready to explore high-yield diamond mining, real estate
@@ -199,13 +202,13 @@ export const ContactPage: React.FC = () => {
                   </span>
                   <div>
                     <p className="text-xs uppercase tracking-wider font-semibold text-silver-500">
-                      Headquarters
+                      USA Headquarters
                     </p>
                     <p className="mt-1 font-display font-semibold text-base text-jet">
-                      PO Box 211712
+                      Minneapolis–St. Paul, Minnesota, United States
                     </p>
-                    <p className="text-sm text-silver-700">
-                      Eagan, MN 55121 USA
+                    <p className="text-sm text-silver-700 mt-0.5">
+                      {COMPANY.headquarters}
                     </p>
                   </div>
                 </div>
@@ -216,14 +219,32 @@ export const ContactPage: React.FC = () => {
                   </span>
                   <div>
                     <p className="text-xs uppercase tracking-wider font-semibold text-rose-300">
-                      Operations Hub
+                      International Liaison
                     </p>
                     <p className="mt-1 font-display font-semibold text-base text-white">
-                      Luanda &amp; Lunda Norte, Angola
+                      Luanda, Angola
                     </p>
                     <p className="text-xs text-silver-300 mt-0.5">
-                      Direct on-site liaisons with mining concessions &amp;
-                      government authorities.
+                      Direct on-site liaisons with mining concessions, extraction
+                      operations &amp; ministerial authorities.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="reveal p-6 rounded-2xl bg-white border border-silver-200 flex items-start gap-4">
+                  <span className="w-12 h-12 rounded-xl bg-cerulean/10 text-cerulean grid place-items-center shrink-0">
+                    <Globe2 className="w-5 h-5" />
+                  </span>
+                  <div>
+                    <p className="text-xs uppercase tracking-wider font-semibold text-silver-500">
+                      International Business Connections
+                    </p>
+                    <p className="mt-1 font-display font-semibold text-base text-jet">
+                      Lisbon, Portugal &amp; London, United Kingdom
+                    </p>
+                    <p className="text-xs text-silver-600 mt-0.5">
+                      Transatlantic institutional alliances &amp; European capital
+                      development channels.
                     </p>
                   </div>
                 </div>
@@ -231,7 +252,7 @@ export const ContactPage: React.FC = () => {
             </div>
 
             {/* Right Column: Interactive Consultation Form */}
-            <div className="lg:col-span-7">
+            <div className="lg:col-span-7" id="consultation-form">
               <div className="rounded-[28px] bg-white border border-silver-200 p-8 sm:p-12 shadow-sm reveal">
                 <div className="flex items-center gap-3 text-rose">
                   <span className="w-2.5 h-2.5 rounded-full bg-rose animate-ping" />
@@ -246,6 +267,15 @@ export const ContactPage: React.FC = () => {
                   Complete the form below to receive investment prospectuses and
                   scheduling options.
                 </p>
+
+                {/* Institutional Confidentiality Notice */}
+                <div className="mt-4 p-4 rounded-xl bg-silver-50 border border-silver-200 flex items-start gap-3">
+                  <ShieldCheck className="w-5 h-5 text-rose shrink-0 mt-0.5" />
+                  <p className="text-xs sm:text-sm text-silver-700 leading-relaxed font-medium">
+                    <strong className="text-jet font-semibold">Institutional Notice:</strong>{' '}
+                    Mutual Non-Disclosure Agreement (NDA) required prior to the release of confidential mineral project dossiers.
+                  </p>
+                </div>
 
                 <form onSubmit={handleSubmit} noValidate className="mt-8 space-y-5">
                   <div className="grid sm:grid-cols-2 gap-5">
@@ -407,8 +437,9 @@ export const ContactPage: React.FC = () => {
                       Submit Consultation Request
                       <Send className="w-4 h-4 ml-1" />
                     </button>
-                    <p className="text-xs text-silver-500 text-center sm:text-right">
-                      Strict non-disclosure standards observed.
+                    <p className="text-xs text-silver-600 flex items-center gap-1.5 sm:max-w-xs text-center sm:text-right">
+                      <Lock className="w-3.5 h-3.5 text-rose shrink-0" />
+                      Mutual Non-Disclosure Agreement (NDA) required prior to the release of confidential mineral project dossiers.
                     </p>
                   </div>
                 </form>
@@ -450,12 +481,12 @@ export const ContactPage: React.FC = () => {
         </div>
       </section>
 
-      {/* CTA BAND */}
+      {/* EXECUTIVE ENGAGEMENT */}
       <CtaBand
-        title="Ready to Invest in Africa’s Prime Markets?"
-        highlight="Speak Directly with our Senior Directors"
-        buttonText="Contact Us"
-        buttonHref="/contact"
+        title="Executive Engagement"
+        highlight="Let's Discuss Your Next Strategic Concession or Capital Development."
+        buttonText="Schedule a Consultation"
+        buttonHref="#consultation-form"
       />
     </>
   );

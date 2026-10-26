@@ -89,21 +89,21 @@ export const HomePage: React.FC = () => {
   return (
     <>
       {/* HERO SECTION */}
-      <section className="hero min-h-[100svh] flex items-center pt-[76px]">
+      <section className="hero min-h-[calc(100svh-76px)] lg:min-h-0 xl:min-h-[calc(100svh-76px)] flex items-center pt-[76px]">
         <div className="orb orb-a" />
         <div className="orb orb-b" />
         <div className="orb orb-c" />
         <div className="grid-lines" />
         <ParticleCanvas />
 
-        <div className="container-x py-14 lg:py-20 grid lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+        <div className="container-x py-8 sm:py-10 lg:py-12 xl:py-14 grid lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-12 items-center">
           <div className="lg:col-span-7">
             <p className="eyebrow text-cerulean-300 reveal">
               <span className="dot" />
               Precious Metals Consulting LLC
             </p>
             <h1
-              className="mt-6 font-display font-semibold text-[2.6rem] leading-[1.02] sm:text-6xl lg:text-[4.6rem] xl:text-[5.2rem] reveal"
+              className="mt-4 sm:mt-5 font-display font-semibold text-3xl sm:text-5xl lg:text-[3.25rem] xl:text-[4.2rem] 2xl:text-[4.8rem] leading-[1.06] break-words reveal"
               style={{ '--d': '.08s' } as React.CSSProperties}
             >
               Transforming <span className="text-gradient">Resources</span>
@@ -111,7 +111,7 @@ export const HomePage: React.FC = () => {
               <span className="italic font-light text-silver-300">Opportunities</span>
             </h1>
             <p
-              className="mt-7 text-base sm:text-lg text-silver-300 max-w-xl leading-relaxed reveal"
+              className="mt-4 sm:mt-5 text-sm sm:text-base lg:text-lg text-silver-300 max-w-xl leading-relaxed reveal"
               style={{ '--d': '.16s' } as React.CSSProperties}
             >
               At Precious Metals Consulting LLC, we connect investors with diamond
@@ -121,33 +121,33 @@ export const HomePage: React.FC = () => {
               government and private sectors.
             </p>
             <div
-              className="mt-9 flex flex-col sm:flex-row gap-3 reveal"
+              className="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-3 reveal"
               style={{ '--d': '.24s' } as React.CSSProperties}
             >
-              <Link to="/contact" className="btn btn-primary">
+              <Link to="/contact" className="btn btn-primary w-full sm:w-auto">
                 Schedule a consultation
                 <ArrowRight className="w-4 h-4 ml-1" />
               </Link>
-              <Link to="/services" className="btn btn-ghost-light">
+              <Link to="/services" className="btn btn-ghost-light w-full sm:w-auto">
                 Learn more
                 <ArrowDownRight className="w-4 h-4 ml-1" />
               </Link>
             </div>
             <ul
-              className="mt-12 flex flex-wrap gap-x-7 gap-y-3 text-sm text-silver reveal"
+              className="mt-6 sm:mt-8 lg:mt-9 flex flex-wrap gap-x-6 gap-y-2.5 text-xs sm:text-sm text-silver reveal"
               style={{ '--d': '.32s' } as React.CSSProperties}
             >
               <li className="flex items-center gap-2">
-                <Compass className="w-4 h-4 text-cerulean-300" />
-                Expert Investment Guidance
+                <Compass className="w-4 h-4 text-cerulean-300 shrink-0" />
+                <span>Expert Investment Guidance</span>
               </li>
               <li className="flex items-center gap-2">
-                <Network className="w-4 h-4 text-cerulean-300" />
-                Strong Industry Networks
+                <Network className="w-4 h-4 text-cerulean-300 shrink-0" />
+                <span>Strong Industry Networks</span>
               </li>
               <li className="flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-cerulean-300" />
-                Trusted &amp; Secure Partnerships
+                <ShieldCheck className="w-4 h-4 text-cerulean-300 shrink-0" />
+                <span>Trusted &amp; Secure Partnerships</span>
               </li>
             </ul>
           </div>
@@ -156,34 +156,26 @@ export const HomePage: React.FC = () => {
             className="lg:col-span-5 relative reveal"
             style={{ '--d': '.2s' } as React.CSSProperties}
           >
-            <div className="hero-visual aspect-[4/5] sm:aspect-[4/3] lg:aspect-[4/5] in">
+            <div className="hero-visual aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/4.5] xl:aspect-[4/4.8] max-h-[360px] sm:max-h-[420px] lg:max-h-[460px] xl:max-h-[500px] w-full in">
               <img
                 src="/assets/hero.png"
                 alt="Polished silver, gold and rough diamonds on a brushed metal surface"
               />
               <div className="sheen" />
             </div>
-            <div className="glass absolute -bottom-6 left-4 right-4 sm:left-auto sm:-left-8 sm:right-auto sm:w-72 rounded-2xl p-4 flex items-center gap-4 shadow-xl">
-              <span className="w-11 h-11 rounded-xl bg-cerulean grid place-items-center shrink-0 text-white">
-                <MapPin className="w-5 h-5" />
+            <div className="glass absolute -bottom-4 left-3 right-3 sm:left-auto sm:-left-6 sm:right-auto sm:w-64 rounded-xl sm:rounded-2xl p-3 sm:p-4 flex items-center gap-3.5 shadow-xl">
+              <span className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-cerulean grid place-items-center shrink-0 text-white">
+                <MapPin className="w-4 h-4 sm:w-5 sm:h-5" />
               </span>
               <div className="min-w-0">
-                <p className="text-[11px] uppercase tracking-[.16em] text-silver">
+                <p className="text-[10px] sm:text-[11px] uppercase tracking-[.16em] text-silver">
                   Focus region
                 </p>
-                <p className="font-display font-medium text-white">Africa · Angola</p>
+                <p className="font-display font-medium text-white text-sm sm:text-base">Africa · Angola</p>
               </div>
             </div>
           </div>
         </div>
-
-        <a
-          href="#about"
-          className="hidden md:flex absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-2 text-[11px] tracking-[.2em] uppercase text-silver-500 hover:text-white transition-colors"
-        >
-          Scroll
-          <span className="w-px h-10 bg-gradient-to-b from-silver-500 to-transparent" />
-        </a>
       </section>
 
       {/* MARQUEE */}
@@ -267,14 +259,18 @@ export const HomePage: React.FC = () => {
               </div>
             </div>
 
-            <p className="mt-6 text-sm text-silver-600 reveal">
-              At Precious Metals Consulting LLC, we are committed to delivering
-              excellence, integrity, and innovation in every project we undertake.
-            </p>
+            <div className="mt-8 p-5 rounded-2xl bg-white border border-silver-200 reveal">
+              <p className="text-xs uppercase tracking-wider font-semibold text-cerulean">
+                Strategic Partnerships &amp; Institutional Alliances
+              </p>
+              <p className="mt-2 text-sm sm:text-base font-display font-medium text-jet italic">
+                “Decades-long alliances with ministerial bodies, state-owned mining entities, and strategic institutional partners.”
+              </p>
+            </div>
 
-            <div className="mt-10 flex flex-wrap gap-3 reveal">
+            <div className="mt-8 flex flex-wrap gap-3 reveal">
               <Link to="/contact" className="btn btn-dark">
-                Contact us
+                Schedule consultation
                 <ArrowUpRight className="w-4 h-4 ml-1" />
               </Link>
               <Link to="/about" className="btn btn-ghost-dark">
@@ -478,8 +474,15 @@ export const HomePage: React.FC = () => {
                 Schedule Your Consultation Today
               </h3>
               <p className="mt-2 text-sm text-silver-600">
-                Share a few details and our team will reach out.
+                Share a few details and our executive advisory team will reach out.
               </p>
+
+              <div className="mt-4 p-3.5 rounded-xl bg-white border border-silver-200 flex items-start gap-2.5">
+                <ShieldCheck className="w-4 h-4 text-rose shrink-0 mt-0.5" />
+                <p className="text-xs text-silver-600 leading-relaxed font-medium">
+                  Mutual Non-Disclosure Agreement (NDA) required prior to the release of confidential mineral project dossiers.
+                </p>
+              </div>
 
               <div className="mt-8 grid gap-5">
                 <div>
@@ -628,11 +631,11 @@ export const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* CTA BAND */}
+      {/* EXECUTIVE ENGAGEMENT */}
       <CtaBand
-        title="Empower Your Workforce"
-        highlight="Get Expert Training Now!"
-        buttonText="Contact Us"
+        title="Executive Engagement"
+        highlight="Let's Discuss Your Next Strategic Concession or Capital Development."
+        buttonText="Schedule a Consultation"
         buttonHref="/contact"
       />
     </>

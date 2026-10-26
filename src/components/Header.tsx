@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ChevronDown, Phone, ArrowUpRight, ArrowRight } from 'lucide-react';
+import { IoMenuSharp } from 'react-icons/io5';
 import { COMPANY, SERVICES } from '../data';
 import { IconRenderer } from './IconRenderer';
 import { MobileMenu } from './MobileMenu';
@@ -66,24 +67,24 @@ export const Header: React.FC = () => {
 
       <header
         id="site-header"
-        className={`fixed top-0 inset-x-0 z-50 ${isScrolled ? 'scrolled' : ''}`}
+        className={`fixed top-0 inset-x-0 z-50 w-full ${isScrolled ? 'scrolled' : ''}`}
       >
-        <div className="container-x h-full flex items-center justify-between gap-6">
+        <div className="container-x h-full flex items-center justify-between gap-3 sm:gap-4 lg:gap-6">
           {/* Logo */}
           <Link
             to="/"
-            className="flex items-center shrink-0"
+            className="flex items-center shrink-0 max-w-[65%] sm:max-w-none"
             aria-label="Precious Metals Consulting LLC — Home"
           >
             <img
               src="/assets/Precious_Metals_Logo.png"
               alt="Precious Metals Consulting LLC"
-              className="h-11 md:h-12 w-auto object-contain"
+              className="h-10 sm:h-12 md:h-[50px] lg:h-[54px] w-auto max-w-full object-contain filter drop-shadow-[0_2px_10px_rgba(255,255,255,0.06)]"
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8" aria-label="Primary">
+          <nav className="hidden lg:flex items-center gap-5 xl:gap-8" aria-label="Primary">
             {navItems.map((n) =>
               n.dropdown ? (
                 <div
@@ -156,35 +157,32 @@ export const Header: React.FC = () => {
           </nav>
 
           {/* Right Header Controls */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 shrink-0 ml-auto lg:ml-0">
             <a
               href={COMPANY.phoneHref}
               title="USA Executive Desk"
               aria-label={`USA Executive Desk: ${COMPANY.phone}`}
-              className="hidden xl:inline-flex items-center gap-2 text-sm text-silver hover:text-white transition-colors"
+              className="hidden xl:inline-flex items-center gap-2 text-xs xl:text-sm text-silver hover:text-white transition-colors"
             >
               <Phone className="w-4 h-4 text-cerulean-300" />
               {COMPANY.phone}
             </a>
             <Link
               to="/contact"
-              className="btn btn-primary hidden sm:inline-flex !min-h-[42px] !px-5 text-sm"
+              className="hidden lg:inline-flex btn btn-primary !min-h-[40px] !px-4 xl:!px-5 text-sm"
             >
               Contact us
               <ArrowUpRight className="w-4 h-4 ml-1" />
             </Link>
             <button
               id="burger"
-              className="burger lg:hidden w-11 h-11 rounded-full border border-white/15 grid place-items-center hover:bg-white/10 transition-colors"
+              className="lg:hidden flex items-center justify-center w-11 h-11 rounded-full border border-white/20 bg-white/10 hover:bg-white/20 active:scale-95 transition-all text-white shrink-0 cursor-pointer"
               onClick={() => setMobileMenuOpen(true)}
               aria-label="Open menu"
               aria-expanded={mobileMenuOpen}
               aria-controls="mobile-menu"
             >
-              <span className="block">
-                <span></span>
-                <span></span>
-              </span>
+              <IoMenuSharp size={26} className="text-white" />
             </button>
           </div>
         </div>

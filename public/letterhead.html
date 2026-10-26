@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Corporate Letterhead — Precious Metals Consulting LLC</title>
+  <link rel="icon" type="image/png" href="/assets/Precious_Metals_Logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --jet: #0B0D12;
+      --cerulean: #007BA7;
+      --cerulean-dark: #005A7A;
+      --rose: #FF4D8D;
+      --silver-100: #F5F7FA;
+      --silver-200: #E5E9F0;
+      --silver-500: #8893A6;
+      --silver-700: #4B5565;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--jet);
+      background: #EAEFF5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 24px 16px;
+    }
+
+    /* Screen Action Bar */
+    .action-bar {
+      width: 100%;
+      max-width: 8.5in;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--jet);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 12px;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .action-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .action-title span {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--rose);
+    }
+
+    .btn-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--cerulean);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #0094C9;
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.1);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.2);
+    }
+
+    /* Printable Page Canvas */
+    .page {
+      width: 8.5in;
+      min-height: 11in;
+      background: white;
+      padding: 0.65in 0.75in;
+      box-shadow: 0 16px 40px rgba(11, 13, 18, 0.12);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Watermark Emblem */
+    .watermark {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 4.8in;
+      opacity: 0.035;
+      pointer-events: none;
+      user-select: none;
+      z-index: 0;
+    }
+
+    .content-layer {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    /* Letterhead Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 18px;
+      border-bottom: 2px solid var(--jet);
+    }
+
+    .brand-block {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .logo-img {
+      height: 64px;
+      width: auto;
+      object-contain: contain;
+    }
+
+    .company-meta {
+      text-align: right;
+      font-size: 10px;
+      line-height: 1.5;
+      color: var(--silver-700);
+    }
+
+    .company-meta strong {
+      display: block;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 13px;
+      color: var(--jet);
+      letter-spacing: -0.01em;
+      margin-bottom: 2px;
+    }
+
+    .company-meta a {
+      color: var(--cerulean);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    /* Strategic Footprint Subheader */
+    .footprint-bar {
+      display: flex;
+      justify-content: space-between;
+      background: var(--jet);
+      color: white;
+      padding: 6px 14px;
+      margin-top: 4px;
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      border-radius: 4px;
+    }
+
+    .footprint-bar span {
+      color: #C9D0DA;
+    }
+
+    .footprint-bar strong {
+      color: white;
+    }
+
+    /* Document Metadata */
+    .doc-meta {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 28px;
+      font-size: 11px;
+      color: var(--silver-700);
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--silver-200);
+    }
+
+    .doc-meta span strong {
+      color: var(--jet);
+    }
+
+    /* Recipient Block */
+    .recipient {
+      margin-top: 24px;
+      font-size: 12px;
+      line-height: 1.6;
+      color: var(--jet);
+    }
+
+    .recipient .salutation {
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    /* Letter Body */
+    .letter-body {
+      margin-top: 24px;
+      font-size: 12.5px;
+      line-height: 1.7;
+      color: #1F2937;
+      flex: 1;
+    }
+
+    .letter-body p {
+      margin-bottom: 16px;
+      text-align: justify;
+    }
+
+    .subject-line {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--jet);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-bottom: 16px;
+      padding-bottom: 4px;
+      border-bottom: 1px dashed var(--silver-200);
+      display: inline-block;
+    }
+
+    /* Sign-off */
+    .signoff {
+      margin-top: 32px;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .signature-space {
+      height: 48px;
+      display: flex;
+      align-items: flex-end;
+      font-family: 'Space Grotesk', cursive;
+      font-style: italic;
+      font-size: 20px;
+      color: var(--cerulean-dark);
+      padding-bottom: 4px;
+    }
+
+    .signer-name {
+      font-weight: 700;
+      color: var(--jet);
+      font-size: 13px;
+    }
+
+    .signer-title {
+      color: var(--silver-700);
+      font-size: 11px;
+    }
+
+    /* Footer */
+    .footer {
+      border-top: 1.5px solid var(--jet);
+      padding-top: 12px;
+      margin-top: 28px;
+      font-size: 9px;
+      line-height: 1.5;
+      color: var(--silver-700);
+    }
+
+    .footer-confidential {
+      background: var(--silver-100);
+      border-left: 3px solid var(--rose);
+      padding: 6px 10px;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: var(--jet);
+      font-size: 9px;
+    }
+
+    .footer-columns {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      color: var(--silver-700);
+    }
+
+    .footer-columns a {
+      color: var(--cerulean);
+      text-decoration: none;
+    }
+
+    /* Print Styles */
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+        margin: 0;
+      }
+
+      .action-bar {
+        display: none !important;
+      }
+
+      .page {
+        width: 100%;
+        min-height: 100vh;
+        box-shadow: none;
+        padding: 0.5in 0.65in;
+        page-break-after: avoid;
+      }
+
+      @page {
+        size: letter;
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Screen Toolbar -->
+  <div class="action-bar">
+    <div class="action-title">
+      <span></span>
+      Official Corporate Letterhead Deliverable
+    </div>
+    <div class="btn-group">
+      <button class="btn btn-secondary" onclick="toggleEdit()" id="editBtn">
+        ✎ Edit Document Text
+      </button>
+      <button class="btn btn-primary" onclick="window.print()">
+        🖨 Print / Save as PDF
+      </button>
+      <a href="/" class="btn btn-secondary">
+        ← Return to Website
+      </a>
+    </div>
+  </div>
+
+  <!-- Document Page -->
+  <div class="page" id="letterheadPage">
+    <!-- Background Watermark -->
+    <img src="/assets/Precious_Metals_Logo.png" alt="" class="watermark" />
+
+    <div class="content-layer">
+      <!-- Letterhead Header -->
+      <header class="header">
+        <div class="brand-block">
+          <img src="/assets/Precious_Metals_Logo.png" alt="Precious Metals Consulting LLC" class="logo-img" />
+        </div>
+        <div class="company-meta">
+          <strong>Precious Metals Consulting LLC</strong>
+          <div>USA Headquarters: Minneapolis–St. Paul, Minnesota, USA</div>
+          <div>Mailing Address: PO Box 211712, Eagan, MN 55121 USA</div>
+          <div>USA Executive Desk: <a href="tel:+16513924757">+1 651-392-4757</a></div>
+          <div>Executive: <a href="mailto:NelsonD@preciousmetalsconsultingllc.com">NelsonD@preciousmetalsconsultingllc.com</a></div>
+          <div>General: <a href="mailto:info@preciousmetalsconsultingllc.com">info@preciousmetalsconsultingllc.com</a></div>
+        </div>
+      </header>
+
+      <!-- International Footprint Ribbon -->
+      <div class="footprint-bar">
+        <div><strong>USA Headquarters:</strong> Minneapolis–St. Paul, MN</div>
+        <div><strong>International Liaison:</strong> Luanda, Angola</div>
+        <div><strong>Business Connections:</strong> Lisbon, Portugal &amp; London, UK</div>
+      </div>
+
+      <!-- Document Metadata -->
+      <div class="doc-meta">
+        <div><span>Date:</span> <strong id="docDate">October 26, 2026</strong></div>
+        <div><span>Ref No:</span> <strong>PMC-EXEC-2026-084</strong></div>
+        <div><span>Classification:</span> <strong style="color: var(--rose);">Confidential / Institutional</strong></div>
+      </div>
+
+      <!-- Recipient Block -->
+      <div class="recipient" contenteditable="false" id="recipientBlock">
+        <div class="salutation">To: Institutional Partner / Concession Advisory Committee</div>
+        <div>Attention: Executive Director &amp; Investment Board</div>
+        <div>Global Natural Resources &amp; Sovereign Capital Division</div>
+      </div>
+
+      <!-- Letter Body -->
+      <div class="letter-body" contenteditable="false" id="letterBody">
+        <div class="subject-line">Subject: Executive Advisory on Strategic Mineral Concessions &amp; Institutional Due Diligence</div>
+
+        <p>Dear Partners &amp; Esteemed Colleagues,</p>
+
+        <p>
+          On behalf of <strong>Precious Metals Consulting LLC</strong>, we extend our highest professional regard. For decades, our advisory has fostered strategic alliances with ministerial bodies, state-owned mining entities, and institutional capital partners navigating emerging natural resource opportunities in Africa, with specialized focus on Angola.
+        </p>
+
+        <p>
+          Our trans-continental advisory infrastructure operates between our corporate headquarters in the Minneapolis–St. Paul metropolitan area and our direct on-site liaison in Luanda, Angola, supported by strategic institutional connections in Lisbon and London. We guide institutional syndicates and private enterprise through all stages of diamond mining concessions, precious mineral prospection, gold extraction frameworks, and sovereign regulatory compliance.
+        </p>
+
+        <p>
+          Every engagement is conducted under strict fiduciary standards, ethical provenance guarantees, and comprehensive due diligence to ensure mutual capital protection and compliance with both national mineral laws and international investment conventions.
+        </p>
+
+        <div class="signoff">
+          <div>Sincerely &amp; Respectfully,</div>
+          <div class="signature-space">Nelson Domingos</div>
+          <div class="signer-name">Nelson Domingos</div>
+          <div class="signer-title">Executive Director &amp; Managing Partner</div>
+          <div class="signer-title">Precious Metals Consulting LLC</div>
+        </div>
+      </div>
+
+      <!-- Letterhead Footer -->
+      <footer class="footer">
+        <div class="footer-confidential">
+          INSTITUTIONAL NOTICE: Mutual Non-Disclosure Agreement (NDA) required prior to the release of confidential mineral project dossiers.
+        </div>
+        <div class="footer-columns">
+          <div>
+            <strong>Precious Metals Consulting LLC</strong> · PO Box 211712, Eagan, MN 55121 USA
+            <br />
+            Tel: <a href="tel:+16513924757">+1 651-392-4757</a> · Web: <a href="https://preciousmetalsconsultingllc.com/">preciousmetalsconsultingllc.com</a>
+          </div>
+          <div style="text-align: right;">
+            Page 1 of 1 · Executive Correspondence
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    // Set current date formatted cleanly
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    document.getElementById('docDate').textContent = new Date().toLocaleDateString('en-US', options);
+
+    // Toggle contenteditable for customizing before print
+    let isEditing = false;
+    function toggleEdit() {
+      isEditing = !isEditing;
+      const recipient = document.getElementById('recipientBlock');
+      const body = document.getElementById('letterBody');
+      const editBtn = document.getElementById('editBtn');
+
+      recipient.contentEditable = isEditing;
+      body.contentEditable = isEditing;
+
+      if (isEditing) {
+        editBtn.textContent = '✔ Save Text Changes';
+        editBtn.style.background = '#007BA7';
+        recipient.style.outline = '2px dashed #007BA7';
+        recipient.style.padding = '8px';
+        body.style.outline = '2px dashed #007BA7';
+        body.style.padding = '8px';
+      } else {
+        editBtn.textContent = '✎ Edit Document Text';
+        editBtn.style.background = 'rgba(255,255,255,0.1)';
+        recipient.style.outline = 'none';
+        recipient.style.padding = '0';
+        body.style.outline = 'none';
+        body.style.padding = '0';
+      }
+    }
+  </script>
+</body>
+</html>
